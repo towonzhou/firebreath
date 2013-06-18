@@ -1,5 +1,5 @@
 firebreath下载和部署
-====                                                                                                                                                                      
+====
 1. 下载fireBreath稳定版  
 `git clone git://github.com/firebreath/FireBreath.git -b firebreath-1.7 firebreath-1.7`  
 2. `cd firebreath-1.7`  
@@ -14,7 +14,7 @@ firebreath下载和部署
 (这个脚本会做一些必要的配置,拷贝fbgen/src/目录下的文件到projects下,
 重命名Template.*为(PluginName).*等)  
 5. 根据系统运行  
-    `./prepmake.sh;./prepcodeblocks.sh;./prepeclipse.sh`  
+    `./prepmake.sh`  
 6. 进入build目录  
     `cd build`  
 7. `make`
