@@ -20,12 +20,14 @@ firebreath下载和部署
 7. `make`
 8. `sudo cp ./bin/zhou/npzhou.so /usr/lib/mozilla/plugins`  
 9. 重启chrome  
-10. 用浏览器打开build/projects/zhou/gen/FBControl.htm即可运行插件 
+10. 用浏览器打开./projects/zhou/gen/FBControl.htm即可运行插件 
 
 代码示例
 ====
+(此代码为增加一个读取系统uuid的接口)  
+在build目录下  
 1. 申明和绑定get_uuid  
-vim projects/zhou/zhouAPI.h  
+vim ../projects/zhou/zhouAPI.h  
 `registerProperty("version",make_property(this,&zhouAPI::get_version));`  
 //在这一行的下面加上  
 `registerProperty("uuid",make_property(this,&zhouAPI::get_uuid));`  
@@ -35,7 +37,7 @@ vim projects/zhou/zhouAPI.h
 `std::string get_uuid();`
 
 2. get_uuid定义  
-vim projects/zhou/zhouAPI.cpp  
+vim ../projects/zhou/zhouAPI.cpp  
 <pre><code>
 std::string zhouAPI::get_uuid()   
 {
@@ -52,6 +54,6 @@ std::string zhouAPI::get_uuid()
     return std::string(uuid);
 }  
 </code></pre>
-3. make  
-4. sudo cp ./bin/zhou/npzhou.so /usr/lib/mozilla/plugins
-5. 就可以在页面中的调用plugin().uuid来获得本机的uuid了
+4. make  
+5. sudo cp ./bin/zhou/npzhou.so /usr/lib/mozilla/plugins
+6. 就可以在页面中的调用plugin().uuid来获得本机的uuid了
