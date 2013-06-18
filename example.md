@@ -7,9 +7,12 @@ firebreath下载和部署
     如果python版本为3.x  
     1. sudo unlink /usr/bin/pyhon  
     2. sudo ln -s /usr/bin/python2.7 /usr/bin/python  
-4. 运行fbgen.py  
+4. 运行fbgen.py,  
     `python fbgen.py`  
-你会看到一些交互选项,如 Plugin Name[]: zhou, (中括号中有的为默认值,直接回车即可)   
+你会看到一些交互选项,如 Plugin Name[]: zhou, 
+(中括号中有的为默认值,直接回车即可)   
+(这个脚本会做一些必要的配置,拷贝fbgen/src/目录下的文件到projects下,
+重命名Template.*为(PluginName).*等)  
 5. 根据系统运行  
     `./prepmake.sh;./prepcodeblocks.sh;./prepeclipse.sh`  
 6. 进入build目录  
